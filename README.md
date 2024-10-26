@@ -16,7 +16,7 @@ Local:
 ./gradlew clean signMavenPublication publishToMavenLocal
 ```
 
-see `~/.m2/repository/dev/mbo/spring-kotlin-s3` for the created content
+see `~/.m2/repository/dev/mbo/library-bom` for the created content
 
 Upload:
 ```shell
