@@ -1,0 +1,9 @@
+rootProject.name = "test"
+
+dependencyResolutionManagement {
+    versionCatalogs {
+        create("libs") {
+            library("library-bom", "dev.mbo", "library-bom").version("1.0.0")
+        }
+    }
+}
