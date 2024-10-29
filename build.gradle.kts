@@ -1,9 +1,11 @@
 plugins {
     `java-library` // we don't want to create a jar but found no other working solution so far
     signing // required for maven central
-    `maven-publish`
+    id("maven-publish")
     // https://plugins.gradle.org/plugin/io.spring.dependency-management
     id("io.spring.dependency-management") version "1.1.6"
+    // https://plugins.gradle.org/plugin/io.github.gradle-nexus.publish-plugin
+    id("io.github.gradle-nexus.publish-plugin") version "2.0.0"
 }
 
 group = "dev.mbo"
@@ -13,7 +15,7 @@ dependencyManagement {
         dependency("dev.mbo:kotlin-logging:1.0.0")
         dependency("dev.mbo:spring-kotlin-cache:1.0.0")
         dependency("dev.mbo:spring-kotlin-error:1.0.0")
-        dependency("dev.mbo:spring-kotlin-jpa:1.0.0")
+        dependency("dev.mbo:spring-kotlin-jpa:1.1.0")
         dependency("dev.mbo:spring-kotlin-reflection:1.0.0")
         dependency("dev.mbo:spring-kotlin-s3:1.0.0")
         dependency("dev.mbo:spring-kotlin-smtp:1.0.0")
@@ -43,19 +45,19 @@ tasks.withType<GenerateModuleMetadata>().configureEach {
     enabled = false
 }
 
-publishing {
+nexusPublishing {
     repositories {
-        maven {
-            val releasesRepoUrl = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
-            val snapshotsRepoUrl = uri("https://s01.oss.sonatype.org/content/repositories/snapshots")
-            url = if (version.toString().endsWith("SNAPSHOT")) snapshotsRepoUrl else releasesRepoUrl
-            credentials {
-                username = project.findProperty("ossrhUsername") as String?
-                password = project.findProperty("ossrhPassword") as String?
-            }
+        sonatype {
+            // needed because default was updated to another server that this project can't use atm
+            nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
+            snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
+            username.set(project.findProperty("ossrhUsername") as String?)
+            password.set(project.findProperty("ossrhPassword") as String?)
         }
     }
+}
 
+publishing {
     publications {
         create<MavenPublication>("maven") {
             from(components["java"])
