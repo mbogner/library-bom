@@ -6,6 +6,8 @@ plugins {
     id("io.spring.dependency-management") version "1.1.6"
     // https://plugins.gradle.org/plugin/io.github.gradle-nexus.publish-plugin
     id("io.github.gradle-nexus.publish-plugin") version "2.0.0"
+    // https://plugins.gradle.org/plugin/net.researchgate.release
+    id("net.researchgate.release") version "3.0.2"
 }
 
 group = "dev.mbo"
