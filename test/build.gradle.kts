@@ -30,7 +30,7 @@ tasks {
 
     wrapper {
         // https://gradle.org/releases/
-        gradleVersion = "8.10.2"
+        gradleVersion = "8.11.1"
         distributionType = Wrapper.DistributionType.BIN
     }
 }
