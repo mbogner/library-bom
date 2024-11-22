@@ -47,6 +47,15 @@ tasks.withType<GenerateModuleMetadata>().configureEach {
     enabled = false
 }
 
+tasks.named("afterReleaseBuild") {
+    dependsOn(
+        "signMavenPublication",
+        "publishToMavenLocal",
+        "publishToSonatype",
+        "closeAndReleaseSonatypeStagingRepository"
+    )
+}
+
 nexusPublishing {
     repositories {
         sonatype {
