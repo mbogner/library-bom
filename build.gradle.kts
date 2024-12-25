@@ -3,27 +3,27 @@ plugins {
     signing // required for maven central
     id("maven-publish")
     // https://plugins.gradle.org/plugin/io.spring.dependency-management
-    id("io.spring.dependency-management") version "1.1.6"
+    id("io.spring.dependency-management") version "1.1.7"
     // https://plugins.gradle.org/plugin/io.github.gradle-nexus.publish-plugin
     id("io.github.gradle-nexus.publish-plugin") version "2.0.0"
     // https://plugins.gradle.org/plugin/net.researchgate.release
-    id("net.researchgate.release") version "3.0.2"
+    id("net.researchgate.release") version "3.1.0"
 }
 
 group = "dev.mbo"
 
 dependencyManagement {
     dependencies {
-        dependency("dev.mbo:kotlin-logging:1.1.7")
-        dependency("dev.mbo:spring-kotlin-cache:1.1.2")
-        dependency("dev.mbo:spring-kotlin-reflection:1.1.2")
-        dependency("dev.mbo:spring-kotlin-error:1.1.2")
-        dependency("dev.mbo:spring-kotlin-jpa:1.2.2")
-        dependency("dev.mbo:spring-kotlin-s3:1.1.2")
-        dependency("dev.mbo:spring-kotlin-validation:1.1.2")
-        dependency("dev.mbo:spring-kotlin-smtp:1.1.2")
-        dependency("dev.mbo:spring-kotlin-templating:1.1.2")
-        dependency("dev.mbo:spring-kotlin-web:1.1.2")
+        dependency("dev.mbo:kotlin-logging:1.1.8")
+        dependency("dev.mbo:spring-kotlin-cache:1.1.3")
+        dependency("dev.mbo:spring-kotlin-reflection:1.1.3")
+        dependency("dev.mbo:spring-kotlin-error:1.1.3")
+        dependency("dev.mbo:spring-kotlin-jpa:1.2.3")
+        dependency("dev.mbo:spring-kotlin-s3:1.1.3")
+        dependency("dev.mbo:spring-kotlin-validation:1.1.3")
+        dependency("dev.mbo:spring-kotlin-smtp:1.1.3")
+        dependency("dev.mbo:spring-kotlin-templating:1.1.3")
+        dependency("dev.mbo:spring-kotlin-web:1.1.3")
     }
 }
 
@@ -116,6 +116,6 @@ signing {
 
 tasks.wrapper {
     // https://gradle.org/releases/
-    gradleVersion = "8.11.1"
+    gradleVersion = "8.12"
     distributionType = Wrapper.DistributionType.BIN
 }
