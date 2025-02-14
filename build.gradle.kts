@@ -24,6 +24,7 @@ dependencyManagement {
         dependency("dev.mbo:spring-kotlin-smtp:1.1.5")
         dependency("dev.mbo:spring-kotlin-templating:1.1.5")
         dependency("dev.mbo:spring-kotlin-web:1.1.5")
+        dependency("dev.mbo:spring-kotlin-aop-logging:1.1.5")
     }
 }
 
