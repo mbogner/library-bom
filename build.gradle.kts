@@ -14,17 +14,17 @@ group = "dev.mbo"
 
 dependencyManagement {
     dependencies {
-        dependency("dev.mbo:kotlin-logging:1.1.12")
-        dependency("dev.mbo:spring-kotlin-cache:1.1.7")
-        dependency("dev.mbo:spring-kotlin-reflection:1.1.7")
-        dependency("dev.mbo:spring-kotlin-error:1.1.7")
-        dependency("dev.mbo:spring-kotlin-jpa:1.2.7")
-        dependency("dev.mbo:spring-kotlin-s3:1.1.7")
-        dependency("dev.mbo:spring-kotlin-validation:1.1.7")
-        dependency("dev.mbo:spring-kotlin-smtp:1.1.7")
-        dependency("dev.mbo:spring-kotlin-templating:1.1.7")
-        dependency("dev.mbo:spring-kotlin-web:1.1.7")
-        dependency("dev.mbo:spring-kotlin-aop-logging:1.1.7")
+        dependency("dev.mbo:kotlin-logging:1.3.2")
+        dependency("dev.mbo:spring-kotlin-cache:1.3.2")
+        dependency("dev.mbo:spring-kotlin-reflection:1.3.2")
+        dependency("dev.mbo:spring-kotlin-error:1.3.2")
+        dependency("dev.mbo:spring-kotlin-jpa:1.3.2")
+        dependency("dev.mbo:spring-kotlin-s3:1.3.2")
+        dependency("dev.mbo:spring-kotlin-validation:1.3.2")
+        dependency("dev.mbo:spring-kotlin-smtp:1.3.2")
+        dependency("dev.mbo:spring-kotlin-templating:1.3.2")
+        dependency("dev.mbo:spring-kotlin-web:1.3.2")
+        dependency("dev.mbo:spring-kotlin-aop-logging:1.3.2")
     }
 }
 
