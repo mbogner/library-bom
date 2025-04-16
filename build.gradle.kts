@@ -14,18 +14,18 @@ group = "dev.mbo"
 
 dependencyManagement {
     dependencies {
-        dependency("dev.mbo:kotlin-logging:1.3.2")
-        dependency("dev.mbo:kotlin-encryption:1.3.2")
-        dependency("dev.mbo:spring-kotlin-cache:1.3.2")
-        dependency("dev.mbo:spring-kotlin-reflection:1.3.2")
-        dependency("dev.mbo:spring-kotlin-error:1.3.2")
-        dependency("dev.mbo:spring-kotlin-jpa:1.3.2")
-        dependency("dev.mbo:spring-kotlin-s3:1.3.2")
-        dependency("dev.mbo:spring-kotlin-validation:1.3.2")
-        dependency("dev.mbo:spring-kotlin-smtp:1.3.2")
-        dependency("dev.mbo:spring-kotlin-templating:1.3.2")
-        dependency("dev.mbo:spring-kotlin-web:1.3.2")
-        dependency("dev.mbo:spring-kotlin-aop-logging:1.3.2")
+        dependency("dev.mbo:kotlin-logging:2025.4.1")
+        dependency("dev.mbo:kotlin-encryption:2025.4.1")
+        dependency("dev.mbo:spring-kotlin-cache:2025.4.1")
+        dependency("dev.mbo:spring-kotlin-reflection:2025.4.1")
+        dependency("dev.mbo:spring-kotlin-error:2025.4.1")
+        dependency("dev.mbo:spring-kotlin-jpa:2025.4.1")
+        dependency("dev.mbo:spring-kotlin-s3:2025.4.1")
+        dependency("dev.mbo:spring-kotlin-validation:2025.4.1")
+        dependency("dev.mbo:spring-kotlin-smtp:2025.4.1")
+        dependency("dev.mbo:spring-kotlin-templating:2025.4.1")
+        dependency("dev.mbo:spring-kotlin-web:2025.4.1")
+        dependency("dev.mbo:spring-kotlin-aop-logging:2025.4.1")
     }
 }
 
