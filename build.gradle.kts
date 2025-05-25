@@ -4,10 +4,10 @@ plugins {
     id("maven-publish")
     // https://plugins.gradle.org/plugin/io.spring.dependency-management
     id("io.spring.dependency-management") version "1.1.7"
-    // https://plugins.gradle.org/plugin/io.github.gradle-nexus.publish-plugin
-    id("io.github.gradle-nexus.publish-plugin") version "2.0.0"
     // https://plugins.gradle.org/plugin/net.researchgate.release
     id("net.researchgate.release") version "3.1.0"
+    // https://jreleaser.org/guide/latest/examples/maven/maven-central.html#_gradle
+    id("org.jreleaser") version "1.18.0"
 }
 
 group = "dev.mbo"
@@ -53,19 +53,20 @@ tasks.named("afterReleaseBuild") {
     dependsOn(
         "signMavenPublication",
         "publishToMavenLocal",
-        "publishToSonatype",
-        "closeAndReleaseSonatypeStagingRepository"
+        "jreleaserFullRelease"
     )
 }
 
-nexusPublishing {
-    repositories {
-        sonatype {
-            // needed because default was updated to another server that this project can't use atm
-            nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
-            snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
-            username.set(project.findProperty("ossrhUsername") as String?)
-            password.set(project.findProperty("ossrhPassword") as String?)
+jreleaser {
+    signing {
+        active.set(org.jreleaser.model.Active.ALWAYS)
+        armored.set(true)
+    }
+    deploy {
+        maven {
+            mavenCentral {
+                active.set(org.jreleaser.model.Active.ALWAYS)
+            }
         }
     }
 }
